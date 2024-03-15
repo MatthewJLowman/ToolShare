@@ -1,0 +1,17 @@
+[04-Mar-2024 19:32:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Session::is_admin_logged_in() in /home/customer/www/toolshare.splatnet.ink/public_html/public/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/index.php on line 12
+[04-Mar-2024 19:33:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Session::is_admin_logged_in() in /home/customer/www/toolshare.splatnet.ink/public_html/public/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/index.php on line 12
+[04-Mar-2024 19:33:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Session::is_admin_logged_in() in /home/customer/www/toolshare.splatnet.ink/public_html/public/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/index.php on line 12
+[04-Mar-2024 19:33:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Session::is_admin_logged_in() in /home/customer/www/toolshare.splatnet.ink/public_html/public/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/index.php on line 12
+[10-Mar-2024 02:15:31 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/customer/www/toolshare.splatnet.ink/public_html/private/initialize.php on line 53
