@@ -3,9 +3,9 @@
 class Tool extends DatabaseObject {
 
     static protected $table_name = "tools";
-    static protected $db_columns = ['tool_id', 'tool_name', 'description', 'availability'];
+    static protected $db_columns = ['id', 'tool_name', 'description', 'availability'];
 
-    public $tool_id;
+    public $id;
     public $tool_name;
     public $description;
     public $availability;
@@ -13,7 +13,7 @@ class Tool extends DatabaseObject {
     public function __construct($args=[]) {
         $this->tool_name = $args['tool_name'] ?? '';
         $this->description = $args['description'] ?? '';
-        $this->$availability = $args['availability'] ?? '';
+        $this->availability = $args['availability'] ?? '';
     }
 
 }

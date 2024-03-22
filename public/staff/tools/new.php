@@ -8,6 +8,7 @@ if(is_post_request()) {
 
   // Create record using post parameters
   $args = $_POST['tool'];
+  $args['availability'] = 'available';
   $tool = new Tool($args);
   $result = $tool->save();
 

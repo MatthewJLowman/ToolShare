@@ -1,14 +1,13 @@
 <?php require_once('../../../private/initialize.php'); ?>
-
+<?php require_login(); ?>
 <?php
 
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
-
 $tool = Tool::find_by_id($id);
 
 ?>
 
-<?php $page_title = 'Show Tool: ' . h($tool->name()); ?>
+<?php $page_title = 'Show Tool: ' . h($tool->tool_name); ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
@@ -17,12 +16,12 @@ $tool = Tool::find_by_id($id);
 
   <div class="bicycle show">
 
-    <h1>Tool: <?php echo h($tool->name()); ?></h1>
+    <h1>Tool: <?php echo h($tool->tool_name); ?></h1>
 
     <div class="attributes">
       <dl>
         <dt>Name</dt>
-        <dd><?php echo h($tool->name); ?></dd>
+        <dd><?php echo h($tool->tool_name); ?></dd>
       </dl>
       <dl>
         <dt>Description</dt>

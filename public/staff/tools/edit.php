@@ -10,7 +10,6 @@ if(!isset($_GET['id'])) {
 $id = $_GET['id'];
 $tool = Tool::find_by_id($id);
 if($tool == false) {
-  redirect_to(url_for('/staff/tools/index.php'));
 }
 
 if(is_post_request()) {

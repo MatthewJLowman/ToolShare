@@ -4,12 +4,12 @@
 <?php
 
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
-
+var_dump($id);
 $admin = User::find_by_id($id);
-
+var_dump($admin);
 ?>
 
-<?php $page_title = 'Show Admin: ' . h($admin->name()); ?>
+<?php $page_title = 'Show Admin: ' . h($admin->name); ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
@@ -18,7 +18,7 @@ $admin = User::find_by_id($id);
 
   <div class="admin show">
 
-    <h1>Admin: <?php echo h($admin->name()); ?></h1>
+    <h1>Admin: <?php echo h($admin->name); ?></h1>
 
     <div class="attributes">
       <dl>
@@ -27,7 +27,7 @@ $admin = User::find_by_id($id);
       </dl>
       <dl>
         <dt>Name</dt>
-        <dd><?php echo h($admin->Name); ?></dd>
+        <dd><?php echo h($admin->name); ?></dd>
       </dl>
     </div>
 

@@ -11,3 +11,31 @@ Stack trace:
 #0 {main}
   thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/new.php on line 11
 [10-Mar-2024 02:53:47 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/index.php on line 6
+[18-Mar-2024 15:47:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function console_log() in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/show.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/show.php on line 6
+[18-Mar-2024 16:03:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function name() on null in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/show.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/show.php on line 12
+[18-Mar-2024 16:04:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function tool_name() on null in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/show.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/show.php on line 12
+[18-Mar-2024 16:11:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function name() on null in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/show.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/show.php on line 21
+[19-Mar-2024 16:40:13 UTC] PHP Fatal error:  Uncaught Error: Call to a member function merge_attributes() on bool in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/edit.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/edit.php on line 19
+[19-Mar-2024 16:45:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Tool::name() in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/delete.php:39
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/delete.php on line 39
+[19-Mar-2024 16:45:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Tool::tool_name() in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/delete.php:39
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/delete.php on line 39
