@@ -16,7 +16,8 @@
       <p>429 Tool St.</p>
       <p>Arden NC 28704</p>
       <p>Matthew Lowman</p>
-    <p><a href="mailto:matthewjlowman@students.abtech.edu">matthewjlowman@students.abtech.edu</a></p>
+      <p><a href="mailto:matthewjlowman@students.abtech.edu">matthewjlowman@students.abtech.edu</a></p>
+      <a href="about.php">About Us</a>
     </footer>
 
   <?php } ?>

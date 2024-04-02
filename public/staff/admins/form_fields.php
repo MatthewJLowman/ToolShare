@@ -1,7 +1,7 @@
 
 
 <dl>
-  <dt>Name</dt>
+  <dt>Username</dt>
   <dd><input type="text" name="user[name]" value="<?php echo h($user->name); ?>" /></dd>
 </dl>
 

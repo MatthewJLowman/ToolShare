@@ -4,6 +4,7 @@
   <head>
     <title>Tool Share <?php if(isset($page_title)) { echo '- ' . h($page_title); } ?></title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/public.css'); ?>" />
   </head>
 
@@ -17,6 +18,7 @@
         </a>
         <img src="../../public/images/saw-hi.png">
       </h1>
+      
       <?php if($session->is_logged_in()) { ?>
         <li><a href="<?php echo url_for('../public/index.php'); ?>">Menu</a></li>
         <li><a href="<?php echo url_for('/staff/logout.php'); ?>">Log Out, <?php echo $session->name; ?></a></li>

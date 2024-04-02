@@ -55,7 +55,7 @@ class User extends DatabaseObject {
       if(is_blank($this->email)) {
         $this->errors[] = "Email cannot be blank.";
       } elseif (!has_length($this->email, array('max' => 255))) {
-        $this->errors[] = "Last name must be less than 255 characters.";
+        $this->errors[] = "Email must be less than 255 characters.";
       } elseif (!has_valid_email_format($this->email)) {
         $this->errors[] = "Email must be a valid format.";
       }

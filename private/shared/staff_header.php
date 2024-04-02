@@ -8,6 +8,7 @@
   <head>
     <title>Tool Share - <?php echo h($page_title); ?></title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/staff.css'); ?>" />
   </head>
 
@@ -19,13 +20,12 @@
     <navigation>
       <ul>
         <?php if($session->is_logged_in()) { ?>
-        <li>User: <?php echo $session->name; ?></li>
-        <li><a href="<?php echo url_for('../public/index.php'); ?>">Menu</a></li>
-        <li><a href="<?php echo url_for('/staff/logout.php'); ?>">Log Out</a></li>
-      <?php } else { ?>
-        <li><a href="<?php echo url_for('/staff/login.php'); ?>">Log In</a></li>
-        <li><a href="<?php echo url_for('/staff/signup.php'); ?>">Sign Up</a></li>
-      <?php } ?>
+          <li><a href="<?php echo url_for('../public/index.php'); ?>">Menu</a></li>
+          <li><a href="<?php echo url_for('/staff/logout.php'); ?>">Log Out, <?php echo $session->name; ?></a></li>
+        <?php } else { ?>
+          <li><a href="<?php echo url_for('/staff/login.php'); ?>">Log In</a></li>
+          <li><a href="<?php echo url_for('/staff/signup.php'); ?>">Sign Up</a></li>
+        <?php } ?>
       </ul>
     </navigation>
 

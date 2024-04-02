@@ -8,13 +8,32 @@ if(is_post_request()) {
 
   // Create record using post parameters
   $args = $_POST['tool'];
+  $args['availability'] = 'available';
+  $user_id = $session->user_id;
   $tool = new Tool($args);
   $result = $tool->save();
 
   if($result === true) {
-    $new_id = $tool->tool_id;
-    $session->message('The tool was created successfully.');
-    redirect_to(url_for('/staff/tools/show.php?id=' . $new_id));
+    $transaction = new Transaction();
+
+        // Assign values to the Transaction object
+        $transaction->tool_id = $tool->id;
+        $transaction->lender_id = $user_id;
+
+        // Save the Transaction object
+        $transaction_result = $transaction->save();
+
+        if ($transaction_result === true) {
+            // Both Tool and Transaction created successfully
+          $new_id = $tool->id;
+          $session->message('The tool was created successfully.');
+          redirect_to(url_for('/staff/tools/show.php?id=' . $new_id));
+        } else {
+            // Transaction creation failed, handle the error
+            $session->message('Failed to create a transaction for the tool.');
+            $result = $tool->delete();
+            var_dump($transaction);
+        }
   } else {
     // show errors
   }

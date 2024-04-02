@@ -52,3 +52,11 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/admins/delete.php on line 11
+[19-Mar-2024 16:46:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function name() on null in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/admins/show.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/admins/show.php on line 12
+[19-Mar-2024 16:47:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function name() on null in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/admins/show.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/admins/show.php on line 21
