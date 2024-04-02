@@ -65,7 +65,7 @@ class DatabaseObject {
   }
 
   protected function create() {
-    $this->validate();
+    //$this->validate();
     if(!empty($this->errors)) { return false; }
 
     $attributes = $this->sanitized_attributes();
@@ -74,6 +74,7 @@ class DatabaseObject {
     $sql .= ") VALUES ('";
     $sql .= join("', '", array_values($attributes));
     $sql .= "')";
+    echo $sql;
     $result = self::$database->query($sql);
     if($result) {
       $this->id = self::$database->insert_id;

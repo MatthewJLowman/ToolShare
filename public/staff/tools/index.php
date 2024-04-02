@@ -9,7 +9,10 @@ $tools = Tool::find_all();
 <div id="content">
   <div class="bicycles listing">
     <h1>Tools</h1>
-    
+    <form action="search.php" method="GET">
+		<input type="text" name="query"/>
+		<input type="submit" value="Search"/>
+	</form>
     <div class="actions">
       <a class="action" href="<?php echo url_for('/staff/tools/new.php'); ?>">Add Tool</a>
     </div>

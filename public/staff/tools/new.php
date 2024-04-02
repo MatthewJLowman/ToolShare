@@ -12,7 +12,7 @@ if(is_post_request()) {
   $user_id = $session->user_id;
   $tool = new Tool($args);
   $result = $tool->save();
-
+  
   if($result === true) {
     $transaction = new Transaction();
 
@@ -32,7 +32,6 @@ if(is_post_request()) {
             // Transaction creation failed, handle the error
             $session->message('Failed to create a transaction for the tool.');
             $result = $tool->delete();
-            var_dump($transaction);
         }
   } else {
     // show errors
