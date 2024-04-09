@@ -19,6 +19,7 @@ $tools = Tool::find_all();
 
   	<table class="list">
       <tr>
+        <th>Image</th>
         <th>Name</th>
         <th>Description</th>
         <th>Availability</th>
@@ -29,6 +30,7 @@ $tools = Tool::find_all();
 
       <?php foreach($tools as $tool) { ?>
         <tr>
+          <td><?php echo h($tool->image); ?></td>
           <td><?php echo h($tool->tool_name); ?></td>
           <td><?php echo h($tool->description); ?></td>
           <td><?php echo h($tool->availability); ?></td>

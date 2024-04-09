@@ -56,3 +56,4 @@ Stack trace:
   thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/new.php on line 17
 [29-Mar-2024 03:12:08 UTC] PHP Parse error:  syntax error, unexpected '$session' (T_VARIABLE) in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/new.php on line 30
 [30-Mar-2024 17:08:21 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/tools/index.php on line 112
+[08-Apr-2024 15:21:17 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting ';' or ',' in /home/customer/www/toolshare.splatnet.ink/public_html/private/classes/Tool.class.php on line 14
