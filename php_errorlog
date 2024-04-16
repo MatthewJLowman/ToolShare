@@ -1,0 +1,8 @@
+[12-Apr-2024 15:36:20 UTC] PHP Fatal error:  require_once(): Failed opening required '../private/initialize.php' (include_path='.:/usr/local/php74/pear') in /home/customer/www/toolshare.splatnet.ink/public_html/index.php on line 1
+[12-Apr-2024 15:36:50 UTC] PHP Fatal error:  require_once(): Failed opening required '/private/initialize.php' (include_path='.:/usr/local/php74/pear') in /home/customer/www/toolshare.splatnet.ink/public_html/index.php on line 1
+[13-Apr-2024 17:50:32 UTC] PHP Fatal error:  require_once(): Failed opening required '../../private/initialize.php' (include_path='.:/usr/local/php74/pear') in /home/customer/www/toolshare.splatnet.ink/public_html/login.php on line 2
+[13-Apr-2024 17:51:07 UTC] PHP Fatal error:  require_once(): Failed opening required '/private/initialize.php' (include_path='.:/usr/local/php74/pear') in /home/customer/www/toolshare.splatnet.ink/public_html/login.php on line 2
+[15-Apr-2024 15:18:50 UTC] PHP Fatal error:  require_once(): Failed opening required '../private/initialize.php' (include_path='.:/usr/local/php74/pear') in /home/customer/www/toolshare.splatnet.ink/public_html/mytools.php on line 1
+[15-Apr-2024 15:24:46 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/toolshare.splatnet.ink/public_html/mytools.php on line 53
+[15-Apr-2024 15:32:10 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/customer/www/toolshare.splatnet.ink/public_html/logout.php on line 7
+[16-Apr-2024 16:47:57 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/customer/www/toolshare.splatnet.ink/public_html/mytools.php on line 5
