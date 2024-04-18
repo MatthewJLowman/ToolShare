@@ -20,8 +20,9 @@
     <navigation>
       <ul>
         <?php if($session->is_logged_in()) { ?>
-          <li><a href="/index.php">Home</a></li>
-          <li><a href="/logout.php">Log Out, <?php echo $session->name; ?></a></li>
+          <li><a href="../../index.php">Home</a></li>
+          <li><a href="../../mytools.php">My Tools</a></li>
+          <li><a href="../../logout.php">Log Out, <?php echo $session->name; ?></a></li>
         <?php } else { ?>
           <li><a href="/login.php">Log In</a></li>
         <?php } ?>

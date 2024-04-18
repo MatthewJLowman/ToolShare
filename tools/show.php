@@ -4,19 +4,25 @@
 
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
 $tool = Tool::find_by_id($id);
+$transactions = Transaction::find_all();
 $user_id = $session->user_id;
 if(is_post_request()) {
 
   // Save record using post parameters
-  $id = $_POST['id'] ??  '1';
-  $args = Tool::find_by_id($id);
+  $args = $_POST['tool'];
   $tool->merge_attributes($args);
   $result = $tool->save();
-  if($result == true) {
-    $args['availability'] = 'in use';
-    $transaction = Transaction::find_by_id($id);
-    $transaction->borrower_id = $user_id;
-    $session->message('The tool was updated successfully.');
+  if($result === true) {
+    $tool->availability = 'in use';
+    $tool->save();
+    foreach ($transactions as $transaction) {
+      $this_transaction = $transaction->tool_id;
+      if ($this_transaction == $tool->id) {
+        $transaction->borrower_id = $user_id;
+        $transaction->save();
+      }
+    }
+    $session->message('The tool was updated successfully!');
     redirect_to(url_for('show.php?id=' . $id));
   } else {
     // show errors
@@ -54,8 +60,7 @@ if(is_post_request()) {
         <dd><?php echo h($tool->availability); ?></dd>
       </dl>
     </div>
-    <form action="show.php" method="post">
-      <input type="hidden" name="id" value="<?php echo($id) ?>" />
+    <form action="<?php echo url_for('show.php?id=' . h(u($id))); ?>" method="post">
       <div id="operations">
         <input type="submit" value="Borrow Tool" />
       </div>

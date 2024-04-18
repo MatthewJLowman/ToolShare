@@ -26,7 +26,12 @@ if(is_post_request()) {
     if($member != false && $member->verify_password($password)) {
       // Mark admin as logged in
       $session->login($member);
-      redirect_to('index.php');
+      if (isset($_SESSION['redirect_to'])) {
+        redirect_to($_SESSION['redirect_to']);
+      } else {
+        redirect_to('index.php');
+      }
+      
     } else {
       // username not found or password does not match
       $errors[] = "Log in was unsuccessful.";

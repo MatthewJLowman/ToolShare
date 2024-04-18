@@ -95,3 +95,11 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/customer/www/toolshare.splatnet.ink/public_html/tools/search.php on line 6
+[16-Apr-2024 19:55:04 UTC] PHP Fatal error:  Uncaught Error: Call to a member function merge_attributes() on bool in /home/customer/www/toolshare.splatnet.ink/public_html/tools/show.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/tools/show.php on line 12
+[16-Apr-2024 19:56:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function merge_attributes() on bool in /home/customer/www/toolshare.splatnet.ink/public_html/tools/show.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/toolshare.splatnet.ink/public_html/tools/show.php on line 12
