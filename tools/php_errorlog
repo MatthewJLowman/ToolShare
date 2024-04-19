@@ -103,3 +103,4 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/customer/www/toolshare.splatnet.ink/public_html/tools/show.php on line 12
+[19-Apr-2024 16:22:07 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/customer/www/toolshare.splatnet.ink/public_html/tools/show.php on line 21

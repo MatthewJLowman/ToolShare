@@ -60,3 +60,4 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/customer/www/toolshare.splatnet.ink/public_html/public/staff/admins/show.php on line 21
+[19-Apr-2024 16:49:18 UTC] PHP Fatal error:  require_once(): Failed opening required '../../../private/initialize.php' (include_path='.:/usr/local/php74/pear') in /home/customer/www/toolshare.splatnet.ink/public_html/users/index.php on line 1

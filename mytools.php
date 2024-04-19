@@ -38,9 +38,9 @@ $transactions = Transaction::find_all();
                   <td><?php echo h($tool->tool_name); ?></td>
                   <td><?php echo h($tool->description); ?></td>
                   <td><?php echo h($tool->availability); ?></td>
-                  <td><a class="action" href="<?php echo url_for('show.php?id=' . h(u($tool->id))); ?>">View</a></td>
-                  <td><a class="action" href="<?php echo url_for('edit.php?id=' . h(u($tool->id))); ?>">Edit</a></td>
-                  <td><a class="action" href="<?php echo url_for('delete.php?id=' . h(u($tool->id))); ?>">Delete</a></td>
+                  <td><a class="action" href="<?php echo url_for('../tools/show.php?id=' . h(u($tool->id))); ?>">View</a></td>
+                  <td><a class="action" href="<?php echo url_for('../tools/edit.php?id=' . h(u($tool->id))); ?>">Edit</a></td>
+                  <td><a class="action" href="<?php echo url_for('../tools/delete.php?id=' . h(u($tool->id))); ?>">Delete</a></td>
                 </tr>
               <?php } ?>
             <?php } ?>
@@ -73,9 +73,9 @@ $transactions = Transaction::find_all();
                   <td><?php echo h($tool->tool_name); ?></td>
                   <td><?php echo h($tool->description); ?></td>
                   <td><?php echo h($tool->availability); ?></td>
-                  <td><a class="action" href="<?php echo url_for('show.php?id=' . h(u($tool->id))); ?>">View</a></td>
-                  <td><a class="action" href="<?php echo url_for('edit.php?id=' . h(u($tool->id))); ?>">Edit</a></td>
-                  <td><a class="action" href="<?php echo url_for('delete.php?id=' . h(u($tool->id))); ?>">Delete</a></td>
+                  <td><a class="action" href="<?php echo url_for('../tools/show.php?id=' . h(u($tool->id))); ?>">View</a></td>
+                  <td><a class="action" href="<?php echo url_for('../tools/edit.php?id=' . h(u($tool->id))); ?>">Edit</a></td>
+                  <td><a class="action" href="<?php echo url_for('../tools/delete.php?id=' . h(u($tool->id))); ?>">Delete</a></td>
                 </tr>
               <?php } ?>
             <?php } ?>

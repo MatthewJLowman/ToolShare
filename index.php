@@ -19,7 +19,7 @@
       </li>
 
       <?php if($session->is_admin_logged_in()) { ?>
-        <li><a href="<?php echo url_for('users/index.php'); ?>">Super Secret Admin Page</a></li>
+        <li><a href="users/index.php">Super Secret Admin Page</a></li>
       <?php } ?>
 
     </ul>

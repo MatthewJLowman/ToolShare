@@ -1,4 +1,4 @@
-<?php require_once('../../../private/initialize.php'); ?>
+<?php require_once('../private/initialize.php'); ?>
 
 <?php
 
@@ -32,9 +32,9 @@ $admins = User::find_all();
           <td><?php echo h($admin->id); ?></td>
           <td><?php echo h($admin->email); ?></td>
           <td><?php echo h($admin->name); ?></td>
-          <td><a class="action" href="<?php echo url_for('/staff/admins/show.php?id=' . h(u($admin->id))); ?>">View</a></td>
-          <td><a class="action" href="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($admin->id))); ?>">Edit</a></td>
-          <td><a class="action" href="<?php echo url_for('/staff/admins/delete.php?id=' . h(u($admin->id))); ?>">Delete</a></td>
+          <td><a class="action" href="<?php echo url_for('show.php?id=' . h(u($admin->id))); ?>">View</a></td>
+          <td><a class="action" href="<?php echo url_for('edit.php?id=' . h(u($admin->id))); ?>">Edit</a></td>
+          <td><a class="action" href="<?php echo url_for('delete.php?id=' . h(u($admin->id))); ?>">Delete</a></td>
     	  </tr>
       <?php } ?>
   	</table>
