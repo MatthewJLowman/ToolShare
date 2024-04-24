@@ -2,7 +2,6 @@
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 <body>
 <div id="main">
-  <section>
     <ul id="menu">
       <li>
         <a href="tools/index.php">
@@ -10,6 +9,9 @@
           <p>Access our inventory of tools submitted by users like you</p>
         </a>
         
+      </li>
+      <li>
+      <img src='images/ai guy mowing lawn.png' alt='an ai generated image of a guy mowing a lawn' width='512' height='512'>
       </li>
       <li>
         <a href="tools/new.php">
@@ -23,16 +25,18 @@
       <?php } ?>
 
     </ul>
-  </section>
-  <section id="page">
-    <h2>Welcome to Tool Share!</h2>
-    <p>At Tool Share, we believe in the power of community and collaboration. Our platform is dedicated to making tools accessible to everyone in our community, fostering a culture of sharing, resourcefulness, and mutual support. Whether you're a seasoned DIY enthusiast, a hobbyist, or a professional tradesperson, we're here to connect you with the tools you need to bring your projects to life.</p>
+  <article>
+    <section id="page">
+      <h2>Welcome to Tool Share!</h2>
+      <p>At Tool Share, we believe in the power of community and collaboration. Our platform is dedicated to making tools accessible to everyone in our community, fostering a culture of sharing, resourcefulness, and mutual support. Whether you're a seasoned DIY enthusiast, a hobbyist, or a professional tradesperson, we're here to connect you with the tools you need to bring your projects to life.</p>
 
-    <h2>How It Works</h2>
+      <h2>How It Works</h2>
 
-    <p>Using Tool Share is easy. Simply sign up for an account, browse our extensive catalog of tools, and request to borrow the ones you need. Whether you're looking for power tools, hand tools, gardening equipment, or anything in between, you'll find a diverse range of options available from fellow members of the community. Once your request is approved, arrange a convenient time and place for pickup, and return the tool when you're finished.</p>
-    <p><a href="mailto:matthewjlowman@students.abtech.edu">Contact Us</a></p>
-  </section>
+      <p>Using Tool Share is easy. Simply sign up for an account, browse our extensive catalog of tools, and request to borrow the ones you need. Whether you're looking for power tools, hand tools, gardening equipment, or anything in between, you'll find a diverse range of options available from fellow members of the community. Once your request is approved, arrange a convenient time and place for pickup, and return the tool when you're finished.</p>
+      <p><a href="mailto:matthewjlowman@students.abtech.edu">Contact Us</a></p>
+    </section>
+    <img src='images/ai guy blowing leaves.png' alt='an ai generated image of a guy blowing leaves with a leafblower' width='512' height='512'>
+  </article>
 </div>
 </body>
 <?php include(SHARED_PATH . '/public_footer.php'); ?>

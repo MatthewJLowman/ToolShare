@@ -5,10 +5,10 @@
 
 <dl>
   <dt>Description</dt>
-  <dd><input type="text" name="tool[description]" value="<?php echo h($tool->description); ?>" /></dd>
+  <dd><input type="text" name="tool[description]" maxlength="255" size="20" value="<?php echo h($tool->description); ?>" /></dd>
 </dl>
 
 <dl>
   <dt>Image</dt>
-  <dd><input type="file" name="tool[image]" accept="image/*" value="<?php echo h($tool->image); ?>"/></dd>
+  <dd><input type="file" name="file" value="<?php echo h($tool->image); ?>"/></dd>
 </dl>

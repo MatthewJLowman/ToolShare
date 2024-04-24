@@ -3,6 +3,7 @@
 // Find all bicycles;
 $tools = Tool::find_all();
 $transactions = Transaction::find_all();
+$_SESSION['tools_redirect'] = $_SERVER['REQUEST_URI'];
 ?>
 <?php $page_title = 'Tools'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
@@ -12,19 +13,10 @@ $transactions = Transaction::find_all();
     <h1>Lent Tools</h1>
     
     <div class="actions">
-      <a class="action" href="new.php">Add Tool</a>
+      <a class="action" href="tools/new.php">Add Tool</a>
     </div>
 
   	<table class="list">
-      <tr>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Availability</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-      </tr>
       <?php 
         $user_id = $session->user_id;
         foreach($tools as $tool) { 
@@ -33,15 +25,19 @@ $transactions = Transaction::find_all();
       ?>
             <?php if ($this_transaction == $tool->id) { ?>
               <?php if ($transaction->lender_id == $user_id) { ?>
-                <tr>
-                  <td><?php echo h($tool->image); ?></td>
-                  <td><?php echo h($tool->tool_name); ?></td>
-                  <td><?php echo h($tool->description); ?></td>
-                  <td><?php echo h($tool->availability); ?></td>
-                  <td><a class="action" href="<?php echo url_for('../tools/show.php?id=' . h(u($tool->id))); ?>">View</a></td>
-                  <td><a class="action" href="<?php echo url_for('../tools/edit.php?id=' . h(u($tool->id))); ?>">Edit</a></td>
-                  <td><a class="action" href="<?php echo url_for('../tools/delete.php?id=' . h(u($tool->id))); ?>">Delete</a></td>
-                </tr>
+              <tr>
+                 <td><a href="<?php echo url_for('../tools/show.php?id=' . h(u($tool->id))); ?>">
+                    <?php if (!is_blank($tool->image)) { ?>
+                    <img src="../../images/<?php echo $tool->image; ?>" alt='<?php echo $tool->tool_name; ?>' width='64' height='64'>
+                    <?php } ?>
+                    <div id='toolinfo'>
+                    <h3><?php echo h($tool->tool_name); ?></h3>
+                    <?php echo h($tool->description); ?>
+                    </div>
+                  </a></td>
+                  <td><a href="<?php echo url_for('../tools/edit.php?id=' . h(u($tool->id))); ?>">Edit</a></td>
+                  <td><a href="<?php echo url_for('../tools/delete.php?id=' . h(u($tool->id))); ?>">Delete</a></td>
+              </tr>
               <?php } ?>
             <?php } ?>
           <?php } ?>
@@ -51,15 +47,6 @@ $transactions = Transaction::find_all();
     <h1>Borrowed Tools</h1>
     
   	<table class="list">
-      <tr>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Availability</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-      </tr>
       <?php 
         $user_id = $session->user_id;
         foreach($tools as $tool) { 
@@ -68,15 +55,19 @@ $transactions = Transaction::find_all();
       ?>
             <?php if ($this_transaction == $tool->id) { ?>
               <?php if ($transaction->borrower_id == $user_id) { ?>
-                <tr>
-                  <td><?php echo h($tool->image); ?></td>
-                  <td><?php echo h($tool->tool_name); ?></td>
-                  <td><?php echo h($tool->description); ?></td>
-                  <td><?php echo h($tool->availability); ?></td>
-                  <td><a class="action" href="<?php echo url_for('../tools/show.php?id=' . h(u($tool->id))); ?>">View</a></td>
-                  <td><a class="action" href="<?php echo url_for('../tools/edit.php?id=' . h(u($tool->id))); ?>">Edit</a></td>
-                  <td><a class="action" href="<?php echo url_for('../tools/delete.php?id=' . h(u($tool->id))); ?>">Delete</a></td>
-                </tr>
+                <?php if ($transaction->borrower_id !== $transaction->lender_id) { ?>
+                  <tr>
+                    <td><a href="<?php echo url_for('../tools/show.php?id=' . h(u($tool->id))); ?>">
+                    <?php if (!is_blank($tool->image)) { ?>
+                    <img src="../../images/<?php echo $tool->image; ?>" alt='<?php echo $tool->tool_name; ?>' width='64' height='64'>
+                    <?php } ?>
+                    <div id='toolinfo'>
+                    <h3><?php echo h($tool->tool_name); ?></h3>
+                    <?php echo h($tool->description); ?>
+                    </div>
+                    </a></td>
+                  </tr>
+                <?php } ?>
               <?php } ?>
             <?php } ?>
           <?php } ?>

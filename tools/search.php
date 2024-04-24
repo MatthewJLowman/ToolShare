@@ -2,7 +2,7 @@
 
 <?php
 // Get the search query from the GET parameters
-$search_query = $_GET['query'] ?? '';
+$search_query = h($_GET['query'] ?? '');
 
 // Find tools matching the search query
 $tools = Tool::find_all(); // Get all tools

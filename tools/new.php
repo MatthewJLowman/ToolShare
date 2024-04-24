@@ -11,8 +11,9 @@ if(is_post_request()) {
   $args['availability'] = 'available';
   $user_id = $session->user_id;
   $tool = new Tool($args);
+  include('upload.php');
+  $tool->image = $fileNameNew;
   $result = $tool->save();
-  
   if($result === true) {
     $transaction = new Transaction();
     $transaction->tool_id = $tool->id;
@@ -52,7 +53,7 @@ if(is_post_request()) {
 
     <?php echo display_errors($tool->errors); ?>
 
-    <form action="<?php echo url_for('new.php'); ?>" method="post">
+    <form action="<?php echo url_for('new.php'); ?>" method="post" enctype="multipart/form-data">
 
       <?php include('form_fields.php'); ?>
 

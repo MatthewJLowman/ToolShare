@@ -25,7 +25,7 @@ if(is_post_request()) {
 
 ?>
 <?php $page_title = 'Sign Up for Membership'; ?>
-<?php include(SHARED_PATH . '/public_header.php'); ?>
+<?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
 
@@ -36,9 +36,9 @@ if(is_post_request()) {
 
     <?php echo display_errors($user->errors); ?>
 
-    <form action="signup.php" method="post">
+    <form id='signup' action="signup.php" method="post">
 
-      <?php include('admins/form_fields.php'); ?>
+      <?php include('users/form_fields.php'); ?>
 
       <div id="operations">
         <input type="submit" value="Sign Up" />
@@ -49,7 +49,7 @@ if(is_post_request()) {
       <a href="login.php">Log In!</a>
     </div>
   </div>
+  <script src='js/script.js'></script>
 
 </div>
-
-<?php include(SHARED_PATH . '/public_footer.php'); ?>
+<?php include(SHARED_PATH . '/staff_footer.php'); ?>

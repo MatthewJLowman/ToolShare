@@ -1,5 +1,4 @@
 html {
-  height: 100%;
   width: 100%;
 }
 
@@ -73,6 +72,32 @@ footer {
 
 .actions {
   margin-bottom: 1em;
+  padding: 1rem;
+}
+
+.action {
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #000;
+  padding: .5rem;
+  background-color: #e3d5b8;
+}
+
+.action:hover {
+  background-color: #EEE;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #000;
+  margin-top: 1rem;
+  padding: .5rem;
+  background-color: #e3d5b8;
+}
+
+.back-link:hover {
+  background-color: #EEE;
 }
 
 
@@ -85,13 +110,43 @@ table {
 
 table.list {
   width: 100%;
+  margin-bottom: 1rem;
+}
+
+.list tbody {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 1rem;
+}
+
+.list tr {
+  padding-bottom: 1rem;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+#borrow {
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  width: auto;
+  padding: 1rem;
+}
+
+#mytools {
+  display: block;
+  padding-bottom: 1rem;
 }
 
 table.list tr td {
   border: 1px solid #999999;
-  background-color: #ebdec4;
+  background-color: #e3d5b8;
+  float: center;
+  margin: 25px auto;
+  align-content: center;
+  width: 100%;
 }
-
+    
 table.list tr th {
   border: 1px solid #37692D;
   background: #37692D;
@@ -99,6 +154,35 @@ table.list tr th {
   text-align: left;
 }
 
+.list tr td a {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  justify-content: left;
+  padding: 1rem;
+  height: auto;
+}
+
+.list a:hover {
+  background: #EEE;
+}
+
+.list img {
+  margin: 0;
+  padding: 1rem;
+}
+
+#toolinfo {
+  display: block;
+}
+
+#inuse {
+  opacity: .5;
+}
+
+#inuse:hover {
+  opacity: 1;
+}
 /* Forms */
 
 dl {
@@ -147,4 +231,36 @@ dd {
   padding: 1em 15px;
   margin: 1em 30px;
   width: 890px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .list tbody {
+  grid-template-columns: auto auto;
+}
+
+@media only screen and (max-width: 740px) {
+  .list tbody {
+  grid-template-columns: auto;
+}
+
+@media only screen and (max-width: 450px) {
+  .list tbody {
+    display: block;
+}
+
+  .list tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  table.list tr td {
+    margin: auto;
+  }
+
+  navigation ul li {
+    display: block;
+    border: 2px solid #000;
+    margin: 0;
+    padding: .5rem;
+  }
 }

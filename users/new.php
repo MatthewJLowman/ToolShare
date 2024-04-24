@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../../private/initialize.php');
+require_once('../private/initialize.php');
 
 if($session->is_admin_logged_in()) {
 if(is_post_request()) {
@@ -13,7 +13,7 @@ if(is_post_request()) {
   if($result === true) {
     $new_id = $admin->id;
     $session->message('The admin was created successfully.');
-    redirect_to(url_for('/staff/admins/show.php?id=' . $new_id));
+    redirect_to(url_for('show.php?id=' . $new_id));
   } else {
     // show errors
   }
@@ -30,14 +30,14 @@ if(is_post_request()) {
 
 <div id="content">
 
-  <a class="back-link" href="<?php echo url_for('/staff/admins/index.php'); ?>">&laquo; Back to List</a>
+  <a class="back-link" href="<?php echo url_for('index.php'); ?>">&laquo; Back to List</a>
 
   <div class="admin new">
     <h1>Create Admin</h1>
 
     <?php echo display_errors($admin->errors); ?>
 
-    <form action="<?php echo url_for('/staff/admins/new.php'); ?>" method="post">
+    <form action="<?php echo url_for('new.php'); ?>" method="post">
 
       <?php include('form_fields.php'); ?>
 

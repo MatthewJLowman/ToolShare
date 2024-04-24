@@ -9,6 +9,16 @@ if(!isset($_GET['id'])) {
 }
 $id = $_GET['id'];
 $tool = Tool::find_by_id($id);
+$transactions = Transaction::find_all();
+$user_id = $session->user_id;
+foreach ($transactions as $transaction) {
+  if ($transaction->tool_id == $tool->id) {
+    $this_transaction = $transaction;
+  }
+}
+if ($user_id !== $this_transaction->lender_id) {
+  redirect_to(url_for('index.php'));
+}
 if($tool == false) {
 }
 

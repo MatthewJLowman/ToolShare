@@ -1,5 +1,4 @@
 <?php require_once('../private/initialize.php'); ?>
-<?php require_login(); ?>
 <?php
 
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
@@ -12,7 +11,9 @@ foreach ($transactions as $transaction) {
   }
 }
 if(is_post_request()) {
-
+  if ($session->is_logged_in() == false) {
+    require_login();
+  }
   // Save record using post parameters
   $args = $_POST['tool'];
   $tool->merge_attributes($args);
@@ -23,13 +24,14 @@ if(is_post_request()) {
       $tool->save();
       $this_transaction->borrower_id = $this_transaction->lender_id;
       $this_transaction->save();
+      $session->message('You have returned this tool!');
     } else {
       $tool->availability = 'in use';
       $tool->save();
       $this_transaction->borrower_id = $user_id;
       $this_transaction->save();
+      $session->message('You have borrowed this tool!');
     }
-    $session->message('The tool was updated successfully!');
     redirect_to(url_for('show.php?id=' . $id));
   } else {
     // show errors
@@ -46,8 +48,12 @@ if(is_post_request()) {
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
-
-  <a class="back-link" href="index.php">&laquo; Back to List</a>
+  <?php if (isset($_SESSION['tools_redirect'])) { ?>
+    <a class="back-link" href="<?php echo $_SESSION['tools_redirect']; ?>">&laquo; Back to List</a>
+  <?php } else { ?>
+    <a class="back-link" href="index.php">&laquo; Back to List</a>
+  <?php } ?>
+  
 
   <div class="bicycle show">
 
@@ -72,6 +78,8 @@ if(is_post_request()) {
         <div id="operations">
           <?php if ($this_transaction->borrower_id == $user_id) { ?>
             <input type="submit" value="Return Tool" />
+          <?php } elseif ($this_transaction->borrower_id !== $user_id && $this_transaction->borrower_id !== $this_transaction->lender_id) { ?>
+            
           <?php } else { ?>
             <input type="submit" value="Borrow Tool" />
           <?php } ?>
