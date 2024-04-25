@@ -1,14 +1,12 @@
 <?php require_once('../private/initialize.php'); ?>
 
 <?php
-
 // Find all admins
 $admins = User::find_all();
-
 ?>
+<?php if($session->is_admin_logged_in()) { ?>
 <?php $page_title = 'Admins'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
-<?php if($session->is_admin_logged_in()) { ?>
 <div id="content">
   <div class="admins listing">
     <h1>Admins</h1>
@@ -18,18 +16,8 @@ $admins = User::find_all();
     </div>
 
   	<table class="list">
-      <tr>
-        <th>ID</th>
-        <th>Email</th>
-        <th>Name</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-      </tr>
-
       <?php foreach($admins as $admin) { ?>
         <tr>
-          <td><?php echo h($admin->id); ?></td>
           <td><?php echo h($admin->email); ?></td>
           <td><?php echo h($admin->name); ?></td>
           <td><a class="action" href="<?php echo url_for('show.php?id=' . h(u($admin->id))); ?>">View</a></td>
@@ -43,6 +31,7 @@ $admins = User::find_all();
 
 </div>
 <?php } else {
-    redirect_to(url_for('../public/index.php'));
-} ?>
+  redirect_to(url_for('../index.php'));
+}
+?>
 <?php include(SHARED_PATH . '/staff_footer.php'); ?>
