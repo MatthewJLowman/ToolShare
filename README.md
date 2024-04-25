@@ -15,15 +15,6 @@ Download the code and put it in your localhost's folder. Use the included .sql f
 Make sure you modify db_credentials.php in the private folder to match your localhost's information.
 
 define("DB_SERVER", "[your localhost name]");
-/**
- * Database username for the development environment.
- */
 define("DB_USER", "[your username]");
-/**
- * Database password for the development environment.
- */
 define("DB_PASS", "[your password]");
-/**
- * Database name for the development environment.
- */
 define("DB_NAME", "[your database name]");
