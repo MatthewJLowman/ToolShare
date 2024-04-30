@@ -24,6 +24,7 @@
         <li><a href="../../mytools.php">My Tools</a></li>
         <li><a href="../../logout.php">Log Out, <?php echo $session->name; ?></a></li>
       <?php } else { ?>
+        <li><a href="../../index.php">Home</a></li>
         <li><a href="<?php echo url_for('../../login.php'); ?>">Log In</a></li>
       <?php } ?>
     </header>

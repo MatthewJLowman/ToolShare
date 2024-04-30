@@ -60,6 +60,9 @@ if(is_post_request()) {
     <h1>Tool: <?php echo h($tool->tool_name); ?></h1>
 
     <div class="attributes">
+      <?php if (!is_blank($tool->image)) { ?>
+       <img src="../../images/<?php echo $tool->image; ?>" alt='<?php echo $tool->tool_name; ?>' width='128' height='128'>
+      <?php } ?>
       <dl>
         <dt>Name</dt>
         <dd><?php echo h($tool->tool_name); ?></dd>

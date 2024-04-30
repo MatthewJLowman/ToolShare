@@ -49,7 +49,11 @@ if(is_post_request()) {
 
 <div id="content">
 
-  <a class="back-link" href="index.php">&laquo; Back to List</a>
+  <?php if (isset($_SESSION['tools_redirect'])) { ?>
+    <a class="back-link" href="<?php echo $_SESSION['tools_redirect']; ?>">&laquo; Back to List</a>
+  <?php } else { ?>
+    <a class="back-link" href="index.php">&laquo; Back to List</a>
+  <?php } ?>
 
   <div class="bicycle edit">
     <h1>Edit Tool</h1>

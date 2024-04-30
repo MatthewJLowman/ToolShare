@@ -33,7 +33,7 @@ if(is_post_request()) {
   $this_transaction->delete();
   $result = $tool->delete();
   $session->message('The tool was deleted successfully.');
-  redirect_to(url_for('index.php'));
+  redirect_to(url_for('../../mytools.php'));
 
 } else {
   // Display form
@@ -46,7 +46,11 @@ if(is_post_request()) {
 
 <div id="content">
 
-  <a class="back-link" href="index.php">&laquo; Back to List</a>
+  <?php if (isset($_SESSION['tools_redirect'])) { ?>
+    <a class="back-link" href="<?php echo $_SESSION['tools_redirect']; ?>">&laquo; Back to List</a>
+  <?php } else { ?>
+    <a class="back-link" href="index.php">&laquo; Back to List</a>
+  <?php } ?>
 
   <div class="bicycle delete">
     <h1>Delete Tool</h1>
